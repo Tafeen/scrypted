@@ -546,6 +546,10 @@ export class HikvisionCameraDoorbell extends HikvisionCamera implements Camera, 
         return this.client as HikvisionDoorbellAPI;
     }
 
+    override getRtspUrlParams() {
+        return this.storage.getItem('rtspUrlParams') || '';
+    }
+
     override async getConstructedVideoStreamOptions(): Promise<UrlMediaStreamOptions[]> {
         if (!this.detectedChannels) {
             const client = this.getClient();

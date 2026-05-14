@@ -400,7 +400,7 @@ export class HikvisionDoorbellAPI extends HikvisionCameraAPI
         this.console.debug('Two way audio closed for channel', channel);
     }
 
-    rtspUrlFor (endpoint: string, channelId: string, params: string): string {
+    rtspUrlFor (endpoint: string, channelId: string, params = ''): string {
         return `rtsp://${endpoint}/ISAPI/Streaming/channels/${channelId}/${params}`;
     }
 
